@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal de Governança – AME Itapevi</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/base.css">
+</head>
+
+<body>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <img src="assets/img/logo-ame.png" alt="Logo AME">
+      <div class="brand-title">
+        <strong>AME - Itapevi</strong>
+        <span>Portal de Governança</span>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#portal">Portal de Governança</a>
+      <a href="gr/">G&amp;R</a>
+      <a href="protocolos/">Protocolos</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ===== BANNER ===== -->
+<header class="site-header">
+  <div class="site-banner">
+    <div class="site-banner-bg"></div>
+    <div class="site-title">PORTAL DE GOVERNANÇA</div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ===== PORTAL DE GOVERNANÇA ===== -->
+  <section id="portal" class="hero">
+  <div class="hero-text">
+    <div class="chip-row">
+      <span class="chip chip-blue">Governança</span>
+      <span class="chip chip-green">Institucional</span>
+    </div>
+
+    <h2>Portal de Governança</h2>
+
+    <p>
+O Portal de Governança do AME – Ambulatório Médico de Especialidades de Itapevi centraliza os principais instrumentos institucionais de gestão e de apoio à assistência especializada, reunindo documentos, diretrizes e ferramentas que sustentam a organização e a padronização dos processos assistenciais e administrativos. O portal contribui para o fortalecimento da segurança do paciente, da conformidade com normas e diretrizes da saúde pública, da integração entre as áreas da unidade e da tomada de decisão baseada em informações estruturadas, promovendo uma atuação alinhada às boas práticas de governança e à melhoria contínua dos serviços prestados.
+    </p>
+  </div>
+
+  <div class="hero-image">
+    <img src="assets/img/governanca.png" alt="Governança institucional AME Itapevi">
+  </div>
+  </section>
+
+  <!-- ===== ACESSOS PRINCIPAIS ===== -->
+  <div class="section-title">
+    <div>Acessos principais</div>
+  </div>
+
+  <div class="cards">
+
+    <!-- G&R -->
+    <div class="card">
+      <h3>
+        Gerenciamento de Riscos
+        <span class="status" style="background: var(--ok);">G&amp;R</span>
+      </h3>
+
+      <div class="links">
+        <a href="gr/">Acessar painel</a>
+      </div>
+
+      <div class="meta">
+        <div class="meta-row">
+          <div><strong>Tipo:</strong> Governança institucional</div>
+        </div>
+        <div><strong>Conteúdo:</strong> Riscos, oportunidades e prazos</div>
+        <div><strong>Formato:</strong> Painel interativo</div>
+      </div>
+    </div>
+
+    <!-- Protocolos -->
+    <div class="card">
+      <h3>
+        Protocolos Assistenciais
+        <span class="status" style="background: var(--blue);">PROTOCOLOS</span>
+      </h3>
+
+      <div class="links">
+        <a href="protocolos/">Acessar protocolos</a>
+      </div>
+
+      <div class="meta">
+        <div class="meta-row">
+          <div><strong>Tipo:</strong> Assistencial</div>
+        </div>
+        <div><strong>Conteúdo:</strong> Protocolos clínicos vigentes</div>
+        <div><strong>Formato:</strong> Documentos oficiais</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    © AME Itapevi – Portal de Governança
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  // ===== SCROLL SUAVE NO MENU (PORTAL DE GOVERNANÇA) =====
+  const topbar = document.querySelector('.topbar');
+
+  document.querySelectorAll('.nav a').forEach(link => {
+    const href = link.getAttribute('href');
+
+    // aplica somente para âncoras internas (#)
+    if (!href || !href.startsWith('#')) return;
+
+    link.addEventListener('click', (e) => {
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      e.preventDefault();
+
+      const top = target.getBoundingClientRect().top + window.pageYOffset;
+      const offset = (topbar ? topbar.offsetHeight : 0) + 10;
+
+      window.scrollTo({
+        top: top - offset,
+        behavior: 'smooth'
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
