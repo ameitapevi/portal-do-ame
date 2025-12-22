@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protocolos Assistenciais – AME Itapevi</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="../assets/css/base.css">
+</head>
+
+<body>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <img src="../assets/img/logo-ame.png" alt="Logo AME">
+      <div class="brand-title">
+        <strong>AME - Itapevi</strong>
+        <span>Protocolos Assistenciais</span>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="../">Portal do AME - Itapevi</a>
+      <a href="../gr/">G&amp;R</a>
+      <a href="#protocolos">Protocolos</a>
+      <a href="../seguranca do paciente/">Segurança do Paciente</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ===== BANNER ===== -->
+<header class="site-header">
+  <div class="site-banner">
+    <div class="site-banner-bg"></div>
+    <div class="site-title">PROTOCOLOS ASSISTENCIAIS</div>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- ===== HERO ===== -->
+<section id="protocolos" class="hero">
+  <div class="hero-text">
+    <div class="chip-row">
+      <span class="chip chip-blue">Assistencial</span>
+      <span class="chip chip-green">Segurança do Paciente</span>
+    </div>
+
+    <h2>Protocolos Assistenciais</h2>
+
+    <p>
+      Os Protocolos Assistenciais do AME – Ambulatório Médico de Especialidades de Itapevi
+      são instrumentos fundamentais para a padronização das práticas clínicas, garantindo
+      condutas seguras, baseadas em evidências e alinhadas às diretrizes institucionais.
+      Sua aplicação contribui para a redução da variabilidade assistencial, fortalecimento
+      da segurança do paciente, melhoria da qualidade do cuidado e conformidade normativa.
+    </p>
+
+    <p>
+      Este painel centraliza os protocolos assistenciais oficiais da unidade, com controle automático
+      de prazos de revisão, facilitando auditorias, treinamentos e a melhoria contínua
+      dos processos assistenciais.
+    </p>
+        <div class="kpis">
+          <div class="kpi">
+            <div class="label">⏳ Periodicidade</div>
+            <div class="value">24 meses</div>
+          </div>
+          <div class="kpi">
+            <div class="label">⚠️ Critério de alerta</div>
+            <div class="value">90 dias</div>
+          </div>
+          
+          <div class="kpi">
+            <div class="label">✅ Acesso</div>
+            <div class="value">PDF oficial</div>
+          </div>
+        </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="../assets/img/protocolos.png" alt="Protocolos Assistenciais AME Itapevi">
+  </div>
+</section>
+
+<!-- ===== RESUMO ===== -->
+<div class="section-title">
+  <div>Resumo do painel <small>(contagem automática)</small></div>
+</div>
+
+<div class="summary">
+  <div class="summary-card">
+    <div class="slabel">Total de protocolos</div>
+    <div class="svalue" id="sumTotal">0</div>
+  </div>
+  <div class="summary-card ok">
+    <div class="slabel">OK</div>
+    <div class="svalue" id="sumOk">0</div>
+  </div>
+  <div class="summary-card alerta">
+    <div class="slabel">ALERTA</div>
+    <div class="svalue" id="sumAlerta">0</div>
+  </div>
+  <div class="summary-card vencido">
+    <div class="slabel">VENCIDO</div>
+    <div class="svalue" id="sumVencido">0</div>
+  </div>
+</div>
+
+<!-- ===== FILTROS ===== -->
+<div class="filters">
+  <button class="filter-btn active" data-filter="ALL">Todos</button>
+  <button class="filter-btn" data-filter="OK">OK</button>
+  <button class="filter-btn" data-filter="ALERTA">ALERTA</button>
+  <button class="filter-btn" data-filter="VENCIDO">VENCIDO</button>
+</div>
+
+<!-- ===== BUSCA ===== -->
+<div class="toolbar">
+  <div class="search-wrap">
+    <label><strong>Pesquisar protocolo:</strong></label>
+    <input id="searchInput" type="text" placeholder="Ex.: Cardiologia, Queda, Alta segura..." />
+    <button id="clearBtn" type="button">Limpar</button>
+  </div>
+  <div id="resultCount"></div>
+</div>
+
+<div id="noResults">Nenhum protocolo encontrado.</div>
+
+<!-- ===== CARDS ===== -->
+<div class="cards-wrapper">
+  <div class="cards" id="cardsContainer">
+
+    <div class="card" data-protocolo="PR.ASSIST.001">
+  <h3>Protocolo código vermelho amarelo e azul
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.001 - Protocolo código vermelho, amarelo e azul - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.022">
+  <h3>Protocolo Urgência e Emergência
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.022 - Urgência e Emergência - Ver.000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.083">
+  <h3>Protocolo Oftalmologia Catarata e Pterígio
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.083 - Protocolo Oftalmologia Catarata e Pterígio - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.084">
+  <h3>Protocolo Linha de Cuidado Clínica
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.084 - Protocolo Linha de Cuidado Clínica - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.085">
+  <h3>Protocolo Linha de Cuidado para Suspeita de Doença Oncológica
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.085 - Protocolo Linha de Cuidado para Suspeita de Doença Oncológica- Ver. 001.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.087">
+  <h3>Protocolo especialidade Otorrinolaringologia
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.087 - Protocolo especialidade otorrino - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.088">
+  <h3>Protocolo especialidade Acupuntura
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.088 - Protocolo especialidade acupuntura - Ver.000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.089">
+  <h3>Protocolo especialidade Neurologia
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.089 - Protocolo especialidade neurologia - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.090">
+  <h3>Protocolo especialidade Reumatologia
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.090 - Protocolo especialidade reumatologia- Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.091">
+  <h3>Protocolo especialidade Gastroenterologia
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.091 - Protocolo especialidade gastroenterologia - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.092">
+  <h3>Protocolo especialidade Urologia
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.092 - Protocolo especialidade Urologia - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.093">
+  <h3>Protocolo especialidade Hematologia
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.093 - Protocolo especialidade hematologia - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.096">
+  <h3>Protocolo Prova de Função Pulmonar
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.096 - Protocolo prova de função pulmonar Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.097">
+  <h3>Protocolo Eletroencefalograma
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.097 - Protocolo eletroencefalograma - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.098">
+  <h3>Protocolo Fonoaudiologia
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.098 - Protocolo fonoaudiologia - Ver.000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.099">
+  <h3>Protocolo Alta Segura
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.099 - Protocolo alta segura - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.100">
+  <h3>Protocolo especialidade Cirurgia Vascular
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.100 - Protocolo especialidade cirurgia vascular - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.101">
+  <h3>Protocolo especialidade Mastologia
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.101 - Protocolo especialidade mastologia - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.102">
+  <h3>Protocolo especialidade Ginecologia / Colposcopia
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.102 - Protocolo especialidade Ginecologia-colposcopia - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.103">
+  <h3>Protocolo especialidade Cardiologia
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.103 - Protocolo especialidade cardiologia - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+<div class="card" data-protocolo="PR.ASSIST.104">
+  <h3>Protocolo especialidade Endocrinologia
+    <span class="status">PROTOCOLO</span>
+  </h3>
+  <div class="links">
+    <a href="PR.ASSIST.104 - Protocolo especialidade endocrinologia - Ver. 000.pdf" target="_blank">Documento oficial</a>
+  </div>
+  <div class="meta">
+    <div><strong>Revisão realizada em:</strong> <span class="last-review"></span></div>
+    <div><strong>Próxima revisão:</strong> <span class="next-review"></span></div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<footer>
+  © AME Itapevi – Protocolos Assistenciais
+</footer>
+
+</div>
+
+<!-- ===== SCRIPT (CSV + STATUS + BUSCA + FILTROS) ===== -->
+<script>
+(function () {
+
+  const SHEET_CSV_URL =
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRDocp3z3FQB90fLco1m_ABtIPwCEDk_8hh-XZP9ooO1QDbZewJam1_Qh5Po-yYLES16uEQWeNrIXcp/pub?output=csv";
+
+  const PERIOD_MONTHS = 24;
+  const ALERT_DAYS = 90;
+
+  function normalize(t){
+    return (t || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim();
+  }
+
+  function parseCSV(text){
+    const sep = text.includes(";") ? ";" : ",";
+    return text.trim().split("\n").map(r => r.split(sep).map(c => c.trim()));
+  }
+
+  function parseISO(d){
+    if(!d) return null;
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(d)) return null;
+    const [y,m,day] = d.split("-").map(Number);
+    return new Date(y, m-1, day);
+  }
+
+  function addMonths(date, m){
+    const d = new Date(date);
+    const day = d.getDate();
+    d.setMonth(d.getMonth() + m);
+    if (d.getDate() < day) d.setDate(0);
+    return d;
+  }
+
+  function formatBR(d){
+    return d ? d.toLocaleDateString("pt-BR") : "—";
+  }
+
+  function updateSummary(cards){
+    let ok = 0, alerta = 0, vencido = 0;
+
+    cards.forEach(card => {
+      const s = card.getAttribute("data-status");
+      if (s === "OK") ok++;
+      else if (s === "ALERTA") alerta++;
+      else if (s === "VENCIDO") vencido++;
+    });
+
+    document.getElementById("sumTotal").textContent = cards.length;
+    document.getElementById("sumOk").textContent = ok;
+    document.getElementById("sumAlerta").textContent = alerta;
+    document.getElementById("sumVencido").textContent = vencido;
+  }
+
+  const cards = Array.from(document.querySelectorAll(".card"));
+
+  fetch(SHEET_CSV_URL, { cache: "no-store" })
+    .then(r => r.text())
+    .then(csv => {
+
+      const rows = parseCSV(csv);
+      const header = rows.shift().map(normalize);
+
+      const idxProt = header.indexOf("protocolo");
+      const idxRev  = header.indexOf("revisao");
+
+      const map = new Map();
+
+      rows.forEach(r => {
+        const key = normalize(r[idxProt]);
+        const m = key.match(/pr\.assist\.\d+/);
+        if (m) map.set(m[0], r[idxRev]);
+      });
+
+      const today = new Date();
+      today.setHours(0,0,0,0);
+
+      cards.forEach(card => {
+        const key = normalize(card.getAttribute("data-protocolo"));
+        const iso = map.get(key);
+
+        const last = parseISO(iso);
+        const lastEl = card.querySelector(".last-review");
+        const nextEl = card.querySelector(".next-review");
+        const badge  = card.querySelector(".status");
+
+        if (!last){
+          lastEl.textContent = "—";
+          nextEl.textContent = "—";
+          badge.textContent = "SEM DATA";
+          badge.style.background = "#64748b";
+          card.setAttribute("data-status", "SEM DATA");
+          return;
+        }
+
+        const next = addMonths(last, PERIOD_MONTHS);
+        const diff = Math.ceil((next - today) / 86400000);
+
+        lastEl.textContent = formatBR(last);
+        nextEl.textContent = formatBR(next);
+
+        if (diff < 0){
+          badge.textContent = "VENCIDO";
+          badge.style.background = "var(--vencido)";
+          card.setAttribute("data-status", "VENCIDO");
+        }
+        else if (diff <= ALERT_DAYS){
+          badge.textContent = "ALERTA";
+          badge.style.background = "var(--alerta)";
+          card.setAttribute("data-status", "ALERTA");
+        }
+        else{
+          badge.textContent = "OK";
+          badge.style.background = "var(--ok)";
+          card.setAttribute("data-status", "OK");
+        }
+      });
+
+      updateSummary(cards);
+    });
+
+})();
+</script>
+
+
+<script>
+(function updateResumoInicial(){
+
+  const cards = Array.from(document.querySelectorAll(".card"));
+
+  let ok = 0, alerta = 0, vencido = 0;
+
+  cards.forEach(card => {
+    const status = card.dataset.status;
+    if (status === "OK") ok++;
+    else if (status === "ALERTA") alerta++;
+    else if (status === "VENCIDO") vencido++;
+  });
+
+  document.getElementById("sumTotal").textContent = cards.length;
+  document.getElementById("sumOk").textContent = ok;
+  document.getElementById("sumAlerta").textContent = alerta;
+  document.getElementById("sumVencido").textContent = vencido;
+
+})();
+
+  // ===== SCROLL SUAVE NO MENU =====
+  const topbar = document.querySelector('.topbar');
+  document.querySelectorAll('.nav a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href');
+      const target = document.querySelector(id);
+      if (!target) return;
+
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.pageYOffset;
+      const offset = (topbar ? topbar.offsetHeight : 0) + 10;
+      window.scrollTo({ top: top - offset, behavior: 'smooth' });
+    });
+  });
+</script>
+
+<script>
+(function () {
+
+  const searchInput = document.getElementById("searchInput");
+  const clearBtn = document.getElementById("clearBtn");
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const cards = Array.from(document.querySelectorAll(".card"));
+  const noResults = document.getElementById("noResults");
+  const resultCount = document.getElementById("resultCount");
+
+  let activeFilter = "ALL";
+
+  function normalize(t){
+    return (t || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim();
+  }
+
+  function applyFilters() {
+    const term = normalize(searchInput.value);
+    let visible = 0;
+
+    cards.forEach(card => {
+      const status = card.dataset.status || "SEM DATA";
+      const title = normalize(card.querySelector("h3")?.innerText);
+      const protocolo = normalize(card.dataset.protocolo);
+
+      const matchText =
+        !term ||
+        title.includes(term) ||
+        protocolo.includes(term);
+
+      const matchStatus =
+        activeFilter === "ALL" || status === activeFilter;
+
+      const show = matchText && matchStatus;
+      card.style.display = show ? "" : "none";
+
+      if (show) visible++;
+    });
+
+    noResults.style.display = visible === 0 ? "block" : "none";
+    resultCount.textContent = `${visible} protocolo(s) exibido(s)`;
+  }
+
+  /* BUSCA */
+  searchInput.addEventListener("input", applyFilters);
+
+  clearBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    applyFilters();
+  });
+
+  /* FILTROS */
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeFilter = btn.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  /* GARANTE EXECUÇÃO APÓS CSV */
+  setTimeout(applyFilters, 500);
+
+})();
+</script>
+
+<script>
+  window.addEventListener("load", () => {
+    document.body.classList.add("page-loaded");
+  });
+</script>
+
+</body>
+</html>
